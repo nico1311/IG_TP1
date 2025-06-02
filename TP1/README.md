@@ -1,6 +1,7 @@
 # Universidad Nacional de las Artes – Informática General – Cátedra Tirigall
 
 ## Trabajo Práctico 1 – Aventura Conversacional
+![Captura](captura.png)
 
 ### Integrantes
 - Caro, Nicolás  
