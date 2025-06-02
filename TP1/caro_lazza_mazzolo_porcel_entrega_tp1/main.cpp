@@ -1112,7 +1112,7 @@ int main()
                     }
                     else if (entrada == "revolear" && libro_disponible)
                     {
-                        cout << "Aplastas a la araña con el libro, que ahora esta todo lleno de sangre de arácnido." << endl;
+                        cout << "Aplastas a la araña con el libro, que ahora está todo lleno de sangre de arácnido." << endl;
                         libro_disponible = false;
                         araña_clear = true;
                     }
@@ -1347,6 +1347,7 @@ int main()
                     cout << R"(                 X                                                                              X                       )" << endl;
                     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
                     cout << "ALCALDE VAMPIRO" << endl;
+                    cout << "¡Todo esto era una trampa! Por eso los demás aventureros nunca regresaron de la mazmorra." << endl;
                     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 
                     cout << "\nEscribe y presiona ENTER - (usa solo minúsculas)" << endl;
@@ -1356,41 +1357,45 @@ int main()
 
                     if ((entrada == "apuñalar" || entrada == "pinchar" || entrada == "clavar" || entrada == "lanzar") && daga_disponible)
                     {
-                        cout << "Has derrotado al alcalde etc etc" << endl;
+                        cout << "Corres hacia el alcalde y le clavas la daga justo en el corazón." << endl;
+                        cout << "El alcalde se rie de ti, pero cae al piso rápidamente." << endl;
+                        cout << "El alcalde se retira arrastrándose, no sin antes decirte que te arrepentirás de esto." << endl;
                         daga_disponible = false;
-                        vidas -= 1;
+                        alcalde_clear = true;
                     }
                     else if ((entrada == "cortar" || entrada == "tajar" || entrada == "talar") && hacha_disponible)
                     {
-                        cout << "Partes a la araña en 2, pero con tanta fuerza que el hacha se queda clavada en el piso y no la puedes sacar." << endl;
+                        cout << "El hacha se rompe y sale volando, no logras hacerle daño al alcalde." << endl;
                         hacha_disponible = false;
-                        alcalde_clear = true;
+                        vidas -= 1;
                     }
                     else if ((entrada == "martillar" || entrada == "romper" || entrada == "triturar" || entrada == "destruir") && martillo_disponible)
                     {
-                        cout << "Martillas a la araña de forma violenta, y se rompe porque le diste con mucha fuerza." << endl;
+                        cout << "El alcalde se ríe de vos y te dice que no podes hacerle nada con un martillo, y te pica con su colmillo." << endl;
                         martillo_disponible = false;
-                        alcalde_clear = true;
+                        vidas -= 1;
                     }
                     else if (entrada == "leer")
                     {
-                        cout << "Es una araña." << endl;
+                        cout << "Es el alcalde convertido en vampiro, no tiene mucho sentido leerle un libro." << endl;
                     }
                     else if (entrada == "revolear" && libro_disponible)
                     {
-                        cout << "Aplastas a la araña con el libro, que ahora esta todo lleno de sangre de arácnido." << endl;
+                        cout << "Le arrojas el libro al alcalde, pero este lo atrapa con su mano y te dice que no podrás vencerlo con un libro." << endl;
                         libro_disponible = false;
-                        alcalde_clear = true;
+                        vidas -= 1;
                     }
-                    else if ((entrada == "presumir" || entrada == "aplastar") && copa_disponible)
+                    else if ((entrada == "presumir") && copa_disponible)
                     {
-                        cout << "Aplastas a la araña de forma violenta, y la copa se rompe porque le diste con mucha fuerza." << endl;
+                        cout << "Presumes la copa del mundo frente al alcalde, pero no parece importarle mucho. El alcalde patea la copa y vuela lejos." << endl;
                         copa_disponible = false;
-                        alcalde_clear = true;
+                        vidas -= 1;
                     }
                     else if ((entrada == "derramar" || entrada == "regalar" || entrada == "verter") && botella_disponible)
                     {
-                        cout << "La araña aprovecha el baño de veneno para acicalarse un poco, la calmaste un poquito pero todavía te quiere picar." << endl;
+                        cout << "Destapas la botella y le arrojas el líquido al alcalde, primero se ríe de ti, pero luego empieza a toser y cae al piso." << endl;
+                        cout << "El alcalde se retira arrastrándose, no sin antes decirte que te arrepentirás de esto." << endl;
+                        alcalde_clear = true;
                         botella_disponible = false;
                         vidas -= 1;
                     }
@@ -1402,14 +1407,14 @@ int main()
                     }
                     else if (entrada == "abrir" && bolsa_cafe_disponible)
                     {
-                        cout << "La araña salta adentro de la bolsa y la tiras al piso del repelus, chau café..." << endl;
+                        cout << "Le arrojas el café al alcalde, se lo ve molesto porque no le gusta el café, pero no parece hacerle daño." << endl;
                         bolsa_cafe_disponible = false;
                         vidas -= 1;
                     }
                     else
                     {
                         vidas -= 1;
-                        cout << "No logras hacer nada y el slime te escupe ácido, lastimándote en el proceso." << endl;
+                        cout << "No logras hacer nada y el alcalde te pica con su colmillo, lastimándote en el proceso." << endl;
                     }
 
                     if (vidas == 0 || entrada == "salir")
@@ -1512,7 +1517,9 @@ int main()
                         cout << R"(                  _X                              /____! !____\                               X_                        )" << endl;
                         cout << R"(                 X                                                                              X                       )" << endl;
                         cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-                        cout << "Has derrotado al alcalde, etc etc." << endl;
+                        cout << "Sin entender mucho lo que acaba de pasar, has derrotado al alcalde." << endl;
+                        cout << "Sientes un alivio al saber que has sobrevivido a la mazmorra." << endl;
+                        cout << "Pero te preguntas si realmente has terminado con el mal que acecha al pueblo." << endl;
                         cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
                         cout << endl;
                         cout << "Presiona ENTER para salir de la mazmorra." << endl;
